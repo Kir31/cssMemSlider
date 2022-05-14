@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(./assets/fonts/SourceSansPro-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;    
+}
+
+.container {
+    max-width: 1280px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 1.5% 3%;
+}
+
+.wrapper-slides {
+    width: 100%;
+    box-shadow: 0px 3px 10px 3px #000000ab;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 500%;       
+}
+
+.slide {
+    width: 20%;       
+    transition: all 0.6s ease;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    margin: 1.5% 0;
+    display: flex;      
+    justify-content: space-between;     
+    font-size: 1.2em;
+}
+
+/* .wrapper-text {   
+    width: 80%; 
+    overflow: hidden;    
+}
+
+.text {
+    display: flex;
+    width: 500%;
+}
+
+.text-item {
+    width: 100%;
+} */
+
+.controls {
+    display: flex;
+}
+
+.bar {       
+    margin: 0 2px;
+    width: 28px;
+    height: 13px;
+    border: 5px solid #fff;
+    border-radius: 30%;
+    background-color: #0e1929;
+    opacity: 0.6;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.bar:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+input[name="slide"] {      
+    display: none;
+}
+
+.bar:active {    
+    opacity: 1;
+    transform: scale(1.5);
+    background-color: #e73058;
+}
+
+#radio1:checked ~ .wrapper-slides .slides .img1 {
+    margin-left: 0;
+}
+#radio2:checked ~ .wrapper-slides .slides .img2 {
+    margin-left: -20%;
+}
+#radio3:checked ~ .wrapper-slides .slides .img3 {
+    margin-left: -40%;
+}
+#radio4:checked ~ .wrapper-slides .slides .img4 {
+    margin-left: -60%;
+}
+#radio5:checked ~ .wrapper-slides .slides .img5 {
+    margin-left: -80%;
+}
+
+#radio1:checked ~ .box .controls .bar:nth-child(1),
+#radio2:checked ~ .box .controls .bar:nth-child(2),
+#radio3:checked ~ .box .controls .bar:nth-child(3),
+#radio4:checked ~ .box .controls .bar:nth-child(4),
+#radio5:checked ~ .box .controls .bar:nth-child(5) {
+    background-color: #e73058;
+    opacity: 1;
+}
+
+
+
