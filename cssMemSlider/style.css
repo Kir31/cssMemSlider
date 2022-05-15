@@ -3,11 +3,7 @@
     src: url(./assets/fonts/SourceSansPro-Regular.ttf);
 }
 
-:root {
-    --font-size_0: 0.24em;
-    --font-size_25: 0.48em;
-    --font-size_50: 0.72em;
-    --font-size_75: 0.96em;
+:root {       
     --font-size_100: 1.2em;    
 }
 
@@ -38,7 +34,7 @@ body {
 
 .slides {
     display: flex;
-    width: 500%;       
+    width: 500%;
 }
 
 .slide {
@@ -69,9 +65,8 @@ img {
     width: 500%;
 }
 
-.text-item {
-    opacity: 0;
-    font-size: 0.3em;
+.text-item {    
+    opacity: 0;    
     width: 20%;
     color: #fff;
     /* transition: all 0.6s ease; */
@@ -112,54 +107,49 @@ input[name="slide"] {
 #radio1:checked ~ .wrapper-slides .slides .img1,
 #radio1:checked ~ .box .wrapper-text .text .text-item:nth-child(1) {
     margin-left: 0;
-    animation: opacity 1s;
+    animation: opacity 2s;
     opacity: 1;    
 }
 #radio2:checked ~ .wrapper-slides .slides .img2,
 #radio2:checked ~ .box .wrapper-text .text .text-item:nth-child(2) {
     margin-left: -20%;
-    animation: opacity 1s;
+    animation: opacity 2s;
     opacity: 1;    
 }
 #radio3:checked ~ .wrapper-slides .slides .img3,
 #radio3:checked ~ .box .wrapper-text .text .text-item:nth-child(3) {
     margin-left: -40%;
-    animation: opacity 1s;
+    animation: opacity 2s;
     opacity: 1;   
 }
 #radio4:checked ~ .wrapper-slides .slides .img4,
 #radio4:checked ~ .box .wrapper-text .text .text-item:nth-child(4) {
     margin-left: -60%;
-    animation: opacity 1s;
+    animation: opacity 2s;
     opacity: 1;    
 }
 #radio5:checked ~ .wrapper-slides .slides .img5,
 #radio5:checked ~ .box .wrapper-text .text .text-item:nth-child(5) {
     margin-left: -80%;
-    animation: opacity 1s;
+    animation: opacity 2s;
     opacity: 1;    
 }
 
 @keyframes opacity {
     0% {
-        opacity: 0.2;
-        font-size: var(--font-size_0);
-    }
-    25% {
-        opacity: 0.4;
-        font-size: var(--font-size_25);
-    }
-    50% {
-        opacity: 0.6;
-        font-size: var(--font-size_50);
-    }
-    75% {
-        opacity: 0.8;
-        font-size: var(--font-size_75);
-    }
+        opacity: 0.1;        
+    } 
     100% {
-        opacity: 1;
-        font-size: var(--font-size_100);
+        opacity: 1;        
+    }
+}
+
+@keyframes font {
+    0% {
+        font-size: 0em;        
+    } 
+    100% {
+        font-size: var(--font-size_100);        
     }
 }
 
@@ -167,10 +157,9 @@ input[name="slide"] {
 #radio2:checked ~ .box .wrapper-text .text .text-item:nth-child(2),
 #radio3:checked ~ .box .wrapper-text .text .text-item:nth-child(3),
 #radio4:checked ~ .box .wrapper-text .text .text-item:nth-child(4),
-#radio5:checked ~ .box .wrapper-text .text .text-item:nth-child(5) {
-    animation: opacity 0.7s;
-    opacity: 1;
-    font-size: var(--font-size_100);
+#radio5:checked ~ .box .wrapper-text .text .text-item:nth-child(5) { 
+    font-size: var(--font-size_100);   
+    animation: font 1s; 
 }
 
 #radio1:checked ~ .box .controls .bar:nth-child(1),
@@ -183,11 +172,7 @@ input[name="slide"] {
 }
 
 @media screen and (max-width: 640px) {
-    :root {
-        --font-size_0: 0.18em;
-        --font-size_25: 0.36em;
-        --font-size_50: 0.54em;
-        --font-size_75: 0.72em;
+    :root {            
         --font-size_100: 0.9em;    
     }    
     .wrapper-slides {          
