@@ -14,13 +14,13 @@ body {
 
 .container {
     max-width: 1280px;
-    min-width: 320px;
+    min-width: 320px;    
     margin: 0 auto;
     padding: 1.5% 3%;
 }
 
 .wrapper-slides {
-    width: 100%;
+    width: 100%;    
     box-shadow: 0px 3px 10px 3px #000000ab;
     overflow: hidden;
 }
@@ -31,8 +31,9 @@ body {
 }
 
 .slide {
+    opacity: 0;
     width: 20%;       
-    transition: all 0.6s ease;
+    /* transition: all 0.6s ease; */
 }
 
 img {
@@ -43,11 +44,11 @@ img {
 .box {
     margin: 1.5% 0;
     display: flex;      
-    justify-content: space-between;     
-    font-size: 1.2em;
+    justify-content: space-between; 
+    height: 7vh;    
 }
 
-/* .wrapper-text {   
+.wrapper-text {   
     width: 80%; 
     overflow: hidden;    
 }
@@ -58,8 +59,11 @@ img {
 }
 
 .text-item {
-    width: 100%;
-} */
+    opacity: 0;
+    font-size: 0.3em;
+    width: 20%;
+    /* transition: all 0.6s ease; */
+}
 
 .controls {
     display: flex;
@@ -92,20 +96,68 @@ input[name="slide"] {
     background-color: #e73058;
 }
 
-#radio1:checked ~ .wrapper-slides .slides .img1 {
+#radio1:checked ~ .wrapper-slides .slides .img1,
+#radio1:checked ~ .box .wrapper-text .text .text-item:nth-child(1) {
     margin-left: 0;
+    animation: opacity 1s;
+    opacity: 1;    
 }
-#radio2:checked ~ .wrapper-slides .slides .img2 {
+#radio2:checked ~ .wrapper-slides .slides .img2,
+#radio2:checked ~ .box .wrapper-text .text .text-item:nth-child(2) {
     margin-left: -20%;
+    animation: opacity 1s;
+    opacity: 1;    
 }
-#radio3:checked ~ .wrapper-slides .slides .img3 {
+#radio3:checked ~ .wrapper-slides .slides .img3,
+#radio3:checked ~ .box .wrapper-text .text .text-item:nth-child(3) {
     margin-left: -40%;
+    animation: opacity 1s;
+    opacity: 1;   
 }
-#radio4:checked ~ .wrapper-slides .slides .img4 {
+#radio4:checked ~ .wrapper-slides .slides .img4,
+#radio4:checked ~ .box .wrapper-text .text .text-item:nth-child(4) {
     margin-left: -60%;
+    animation: opacity 1s;
+    opacity: 1;    
 }
-#radio5:checked ~ .wrapper-slides .slides .img5 {
+#radio5:checked ~ .wrapper-slides .slides .img5,
+#radio5:checked ~ .box .wrapper-text .text .text-item:nth-child(5) {
     margin-left: -80%;
+    animation: opacity 1s;
+    opacity: 1;    
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0.2;
+        font-size: 0.24em;
+    }
+    25% {
+        opacity: 0.4;
+        font-size: 0.48em;
+    }
+    50% {
+        opacity: 0.6;
+        font-size: 0.72em;
+    }
+    75% {
+        opacity: 0.8;
+        font-size: 0.96em;
+    }
+    100% {
+        opacity: 1;
+        font-size: 1.2em;
+    }
+}
+
+#radio1:checked ~ .box .wrapper-text .text .text-item:nth-child(1),
+#radio2:checked ~ .box .wrapper-text .text .text-item:nth-child(2),
+#radio3:checked ~ .box .wrapper-text .text .text-item:nth-child(3),
+#radio4:checked ~ .box .wrapper-text .text .text-item:nth-child(4),
+#radio5:checked ~ .box .wrapper-text .text .text-item:nth-child(5) {
+    animation: opacity 0.7s;
+    opacity: 1;
+    font-size: 1.2em;
 }
 
 #radio1:checked ~ .box .controls .bar:nth-child(1),
