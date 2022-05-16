@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(./assets/fonts/SourceSansPro-Regular.ttf);
+}
+
+:root {       
+    --font-size_100: 1.2em;    
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;   
+    background-color: #1a1a1b; 
+}
+
+.container {
+    max-width: 64rem;
+    min-width: 16rem;    
+    margin: 0 auto;
+    padding: 1%;
+}
+
+.wrapper-slides {
+    width: 77%;    
+    margin: 0 auto;
+    border: 0.25rem solid #fff;
+    box-shadow: 0rem 0.15rem 0.5rem 0.15rem #000000ab;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+}
+
+.slide {
+    opacity: 0;
+    width: 20%;       
+    /* transition: all 0.6s ease; */
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: 77%;  
+    margin: 1.5% auto;
+    display: flex;      
+    justify-content: space-between;         
+}
+
+.wrapper-text {   
+    width: 80%; 
+    overflow: hidden;    
+}
+
+.text {
+    display: flex;
+    width: 500%;
+}
+
+.text-item {    
+    opacity: 0;    
+    width: 20%;
+    color: #fff;
+    /* transition: all 0.6s ease; */
+}
+
+.controls {
+    display: flex;    
+    margin: 0.7% 0;
+}
+
+.bar {       
+    margin: 0 0.1rem;
+    width: 1.3rem;
+    height: 0.85rem;
+    border: 0.35rem solid #1a1a1b;
+    
+    border-right: 0.2rem;
+    border-radius: 40%;
+    background-color: #26bec9;
+    opacity: 0.6;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.bar:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+input[name="slide"] {      
+    display: none;
+}
+
+.bar:active {    
+    opacity: 1;
+    transform: scale(1.3);
+    background-color: #fffb28;
+}
+
+#radio1:checked ~ .wrapper-slides .slides .img1,
+#radio1:checked ~ .box .wrapper-text .text .text-item:nth-child(1) {
+    margin-left: 0;
+    animation: opacity 2s;
+    opacity: 1;    
+}
+#radio2:checked ~ .wrapper-slides .slides .img2,
+#radio2:checked ~ .box .wrapper-text .text .text-item:nth-child(2) {
+    margin-left: -20%;
+    animation: opacity 2s;
+    opacity: 1;    
+}
+#radio3:checked ~ .wrapper-slides .slides .img3,
+#radio3:checked ~ .box .wrapper-text .text .text-item:nth-child(3) {
+    margin-left: -40%;
+    animation: opacity 2s;
+    opacity: 1;   
+}
+#radio4:checked ~ .wrapper-slides .slides .img4,
+#radio4:checked ~ .box .wrapper-text .text .text-item:nth-child(4) {
+    margin-left: -60%;
+    animation: opacity 2s;
+    opacity: 1;    
+}
+#radio5:checked ~ .wrapper-slides .slides .img5,
+#radio5:checked ~ .box .wrapper-text .text .text-item:nth-child(5) {
+    margin-left: -80%;
+    animation: opacity 2s;
+    opacity: 1;    
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0.1;        
+    } 
+    100% {
+        opacity: 1;        
+    }
+}
+
+@keyframes font {
+    0% {
+        font-size: 0em;        
+    } 
+    100% {
+        font-size: var(--font-size_100);        
+    }
+}
+
+#radio1:checked ~ .box .wrapper-text .text .text-item:nth-child(1),
+#radio2:checked ~ .box .wrapper-text .text .text-item:nth-child(2),
+#radio3:checked ~ .box .wrapper-text .text .text-item:nth-child(3),
+#radio4:checked ~ .box .wrapper-text .text .text-item:nth-child(4),
+#radio5:checked ~ .box .wrapper-text .text .text-item:nth-child(5) { 
+    font-size: var(--font-size_100);   
+    animation: font 1s; 
+}
+
+#radio1:checked ~ .box .controls .bar:nth-child(1),
+#radio2:checked ~ .box .controls .bar:nth-child(2),
+#radio3:checked ~ .box .controls .bar:nth-child(3),
+#radio4:checked ~ .box .controls .bar:nth-child(4),
+#radio5:checked ~ .box .controls .bar:nth-child(5) {
+    background-color: #fffb28;
+    opacity: 1;
+}
+
+@media screen and (max-width: 34rem) {
+    :root {            
+        --font-size_100: 0.8em;    
+    }    
+    .wrapper-slides {          
+        box-shadow: 0rem 0.1rem 0.4rem 0.1rem #000000ab;
+        border-width: 0.1rem;
+    }
+    .box {
+        flex-direction: column;             
+    }
+    .controls {        
+        margin: 3% auto;
+    }
+    .wrapper-text {    
+        order: 2;  
+        width: 100%;   
+    }   
+}
+
