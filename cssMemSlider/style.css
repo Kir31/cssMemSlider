@@ -18,8 +18,8 @@ body {
 }
 
 .container {
-    max-width: 1280px;
-    min-width: 320px;    
+    max-width: 64rem;
+    min-width: 16rem;    
     margin: 0 auto;
     padding: 1%;
 }
@@ -27,8 +27,8 @@ body {
 .wrapper-slides {
     width: 77%;    
     margin: 0 auto;
-    border: 5px solid #fff;
-    box-shadow: 0px 3px 10px 3px #000000ab;
+    border: 0.25rem solid #fff;
+    box-shadow: 0rem 0.15rem 0.5rem 0.15rem #000000ab;
     overflow: hidden;
 }
 
@@ -78,11 +78,13 @@ img {
 }
 
 .bar {       
-    margin: 0 2px;
-    width: 28px;
-    height: 13px;
-    border: 5px solid #1a1a1b;
-    border-radius: 30%;
+    margin: 0 0.1rem;
+    width: 1.3rem;
+    height: 0.85rem;
+    border: 0.35rem solid #1a1a1b;
+    
+    border-right: 0.2rem;
+    border-radius: 40%;
     background-color: #26bec9;
     opacity: 0.6;
     transition: all 0.4s ease;
@@ -171,13 +173,13 @@ input[name="slide"] {
     opacity: 1;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 34rem) {
     :root {            
-        --font-size_100: 0.9em;    
+        --font-size_100: 0.8em;    
     }    
     .wrapper-slides {          
-        box-shadow: 0px 2px 8px 2px #000000ab;
-        border-width: 2px;
+        box-shadow: 0rem 0.1rem 0.4rem 0.1rem #000000ab;
+        border-width: 0.1rem;
     }
     .box {
         flex-direction: column;             
